@@ -22,7 +22,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-          cache: gradle
       - name: Reassemble source archive
         run: python3 -c "import base64,pathlib; p=sorted(pathlib.Path('.github-upload').glob('part*.b64')); pathlib.Path('veiled-intro-source.zip').write_bytes(base64.b64decode(b''.join(x.read_bytes() for x in p)))"
       - name: Unpack mod source
